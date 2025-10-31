@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architect – Design & Architecture Magazine</title>
+  <link rel="stylesheet" href="WebTexno.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+      color: #333;
+      background: #eceff1;
+    }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    /* Navbar */
+    .navbar { background: #0f141a; color: #fff; border-bottom: 1px solid #0b0f14; }
+    .navbar .container {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 60px;
+    }
+    .logo { font-size: 20px; font-weight: 800; color: #20bfd0; }
+    nav a {
+      color: #c7c9d3; margin-left: 16px; text-decoration: none;
+      text-transform: uppercase; font-size: 13px; font-weight: 600;
+      padding: 6px 8px; border-radius: 6px;
+    }
+    nav a:hover, nav a.active { color: #fff; background: rgba(255,255,255,.10); }
+
+    /* Hero */
+    .hero {
+      height: 360px; background-size: cover; background-position: center;
+      position: relative; display: grid; place-items: center;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.45);
+    }
+    .overlay {
+      position: relative; text-align: center; color: #fff; z-index: 1;
+    }
+    .hero h1 {
+      font-size: 22px; letter-spacing: .12em; margin-bottom: 14px;
+    }
+    .btns { display: inline-flex; gap: 10px; justify-content: center; }
+    .btn {
+      padding: 10px 18px; border-radius: 25px; color: #fff;
+      font-weight: bold; text-decoration: none;
+    }
+    .green { background: #57c770; }
+    .blue  { background: #1ea5ff; }
+
+    /* Sections */
+    .section { padding: 40px 0; text-align: center; }
+    .section h2 {
+      color: #20bfd0; font-size: 14px; letter-spacing: .2em; margin-bottom: 16px;
+    }
+
+    /* Grid */
+    .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
+    @media (max-width: 900px){ .grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 520px){ .grid { grid-template-columns: 1fr; } }
+
+    /* Cards */
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; }
+    .card img { width: 100%; display: block; }
+    .card p {
+      background: #fff; padding: 10px; border-top: 1px solid #eee;
+      border-radius: 0 0 6px 6px; font-size: 13px;
+    }
+
+    /* Clients */
+    .clients {
+      background-size: cover; background-position: center; color: #fff;
+      padding: 50px 0; position: relative;
+    }
+    .clients::before { content:""; position:absolute; inset:0; background: rgba(0,0,0,.35); }
+    .clients > * { position: relative; }
+    .clients h2 { color: #fff; }
+    .logos {
+      display: flex; justify-content: center; gap: 40px; margin-top: 20px;
+      font-weight: bold;
+    }
+
+    /* Top rated */
+    .grid.small img {
+      width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px;
+    }
+
+    /* Hot news */
+    .news { display: grid; gap: 20px; margin-top: 20px; }
+    .item {
+      display: grid; grid-template-columns: 200px 1fr;
+      background: #fff; border: 1px solid #ddd; border-radius: 6px; overflow: hidden;
+      text-align: left; gap: 14px;
+    }
+    .item img { width: 100%; height: 140px; object-fit: cover; }
+    .item div { padding: 12px; }
+    .item h3 { font-size: 16px; margin-bottom: 8px; color: #111; }
+    .item p { color: #555; font-size: 14px; line-height: 1.5; }
+
+    @media(max-width:700px){
+      .item { grid-template-columns: 1fr; }
+      .item img { width: 100%; height: 220px; }
+    }
+
+    /* Footer */
+    footer {
+      background: #0e0e10; color: #ccc; text-align: center; padding: 20px 0;
+      margin-top: 40px; font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">Architect</div>
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#">Architecture Design</a>
+        <a href="#">Strange Buildings</a>
+        <a href="#">Magazine</a>
+        <a href="#">Blog</a>
+        <a href="#">News</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="background-image:url('assets/page1_img11.png')">
+    <div class="overlay">
+      <h1>THE LATEST NEWS ON DESIGN & ARCHITECTURE</h1>
+      <div class="btns">
+        <a href="#" class="btn green">Subscribe Now</a>
+        <a href="#" class="btn blue">Best Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOST POPULAR POSTS -->
+  <section class="section">
+    <h2>MOST POPULAR POSTS</h2>
+    <div class="grid">
+      <div class="card"><img src="assets/page1_img12.png" alt=""><p>Vanglo House By LWPAC in Canada</p></div>
+      <div class="card"><img src="assets/page1_img21.png" alt=""><p>Sunrise Expanse Hotel in USA</p></div>
+      <div class="card"><img src="assets/page1_img24.png" alt=""><p>Stargaze Resort &amp; Spa in USA</p></div>
+      <div class="card"><img src="assets/page1_img25.png" alt=""><p>Royal Blossom Hotel &amp; Spa in USA</p></div>
+      <div class="card"><img src="assets/page1_img26.png" alt=""><p>Sunset Shack Hotel in Spain</p></div>
+      <div class="card"><img src="assets/page1_img22.png" alt=""><p>Glorious Expanse Hotel in France</p></div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients" style="background-image:url('assets/page1_img17.png')">
+    <h2>OUR MOST POPULAR CLIENTS</h2>
+    <div class="logos">
+      <span>National Post</span>
+      <span>Dryme</span>
+      <span>House & Home</span>
+      <span>Journy</span>
+    </div>
+  </section>
+
+  <!-- TOP RATED -->
+  <section class="section">
+    <h2>TOP RATED</h2>
+    <div class="grid small">
+      <img src="assets/page1_img22.png" alt="">
+      <img src="assets/page1_img23.png" alt="">
+      <img src="assets/page1_img24.png" alt="">
+      <img src="assets/page1_img29.png" alt="">
+    </div>
+  </section>
+
+  <!-- HOT NEWS -->
+  <section class="section">
+    <h2>HOT NEWS</h2>
+    <div class="news">
+      <div class="item">
+        <img src="assets/page1_img27.png" alt="">
+        <div>
+          <h3>Prophecy Hotel & Spa in Emirate</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/page1_img28.png" alt="">
+        <div>
+          <h3>Nebula Hotel in Spain</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/page1_img29.png" alt="">
+        <div>
+          <h3>Western Pyramid Resort in Egypt</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/page1_img22.png" alt="">
+        <div>
+          <h3>Grand Meadows Resort in Maldives</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/page1_img23.png" alt="">
+        <div>
+          <h3>Wanderlust Resort in Tenerife</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/page1_img24.png" alt="">
+        <div>
+          <h3>Twin Sanctuary Hotel in Great Britain</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/page1_img25.png" alt="">
+        <div>
+          <h3>King's Shroud Resort in Spain</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/page1_img26.png" alt="">
+        <div>
+          <h3>Prism Hotel in Ireland</h3>
+          <p>Amazing Gabion Ideas for Outdoors. A Gabion is a cage box or cylinder filled with rocks, concrete, or sometimes sand and soil and it is a great way to decorate your outdoor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    All Rights Reserved © 2014 architect.com – Interior Design & Architecture Magazine
+  </footer>
+</body>
+</html>
